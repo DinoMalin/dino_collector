@@ -23,6 +23,14 @@ int main() {
 	dino_free();
 
 	printf("\n");
+
 	printf("trying to free when nothing is allocated\n");
+	dino_free();
+
+	printf("\n");
+
+	printf("passing null to the allocator\n");
+	char *str4 = dino_alloc(NULL);
+	(void)str4;
 	dino_free();
 }

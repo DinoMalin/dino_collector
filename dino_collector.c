@@ -51,7 +51,9 @@ void *dino_collector(void *ptr, COLLECTOR_ACTION action) {
 }
 
 void *dino_alloc(void *ptr) {
-	return dino_collector(ptr, ADD);
+	if (ptr)
+		return dino_collector(ptr, ADD);
+	return NULL;
 }
 
 void dino_free() {
